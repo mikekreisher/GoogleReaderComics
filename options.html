@@ -1,0 +1,67 @@
+<html>
+<head><title>Comic Helper Options</title></head>
+<script type="text/javascript" src="jquery-1.4.4.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+	// Restores select box state to saved value from localStorage.
+	$("input[name='boxes']").each(function() {
+		var id = $(this).attr("id");
+		var checked = localStorage[id];
+		this.checked = (!checked || checked == "true") ? true : false;
+	});
+
+	// If all options are checked, then check the "Select/Unselect all" checkbox
+	if ($("input[name='boxes']:checked").length == $("input[name='boxes']").length) {
+		$("#toggle").attr("checked", true);
+	}
+});
+
+// Saves options to localStorage.
+function save_options() {
+	$("input[name='boxes']").each(function() {
+		var id = $(this).attr("id");
+		localStorage[id] = this.checked;
+	});
+
+	$("#saveMessage").show().delay(800).fadeOut(300);
+}
+
+// Select/Unselect all options
+function toggle_all(source) {
+	$("input[name='boxes']").each(function() {
+		this.checked = source.checked;
+	});
+}
+
+</script>
+
+<body>
+
+<p>Enabled for:</p>
+<input type="checkbox" name="boxes" id="smbc" />
+<label for="smbc">smbc-comics.com</label><br />
+<input type="checkbox" name="boxes" id="asp" />
+<label for="asp">amazingsuperpowers.com</label><br />
+<input type="checkbox" name="boxes" id="xkcd" />
+<label for="xkcd">xkcd.com</label><br />
+<input type="checkbox" name="boxes" id="ag" />
+<label for="ag">abstrusegoose.com</label><br />
+<input type="checkbox" name="boxes" id="bc" />
+<label for="bc">boatcrime.com</label><br />
+<input type="checkbox" name="boxes" id="qwantz" />
+<label for="qwantz">qwantz.com</label><br />
+<input type="checkbox" name="boxes" id="reader" />
+<label for="reader">Google Reader</label><br />
+<p>
+<input type="checkbox" id="toggle" onclick="toggle_all(this)" />
+<label for="toggle">Select/Unselect All</label>
+</p>
+
+<br>
+<button onclick="save_options()">Save</button>
+<p />
+<div id="saveMessage" style="color: green; display: none;">
+Saved
+</div>
+</body>
+</html>

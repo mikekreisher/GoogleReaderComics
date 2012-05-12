@@ -1,0 +1,34 @@
+{
+   "background_page": "background.html",
+   "content_scripts": [ {
+      "js": [ "jquery-1.4.4.min.js", "common.js", "smbc.js" ],
+      "matches": [ "http://www.smbc-comics.com/*" ]
+   }, {
+      "js": [ "jquery-1.4.4.min.js", "common.js", "amazingsuperpowers.js" ],
+      "matches": [ "http://www.amazingsuperpowers.com/*" ]
+   }, {
+      "js": [ "jquery-1.4.4.min.js", "common.js", "xkcd.js" ],
+      "matches": [ "http://*.xkcd.com/*" ]
+   }, {
+      "js": [ "jquery-1.4.4.min.js", "common.js", "abstrusegoose.js" ],
+      "matches": [ "http://*.abstrusegoose.com/*" ]
+   }, {
+      "js": [ "jquery-1.4.4.min.js", "common.js", "bc.js" ],
+      "matches": [ "http://*.boatcrime.com/*" ]
+   }, {
+      "js": [ "jquery-1.4.4.min.js", "common.js", "qwantz.js" ],
+      "matches": [ "http://*.qwantz.com/*" ]
+   }, {
+      "js": [ "jquery-1.4.4.min.js", "json2.js", "common.js", "reader.user.js" ],
+      "matches": [ "http://reader.google.com/reader/*", "http://www.google.com/reader/*" ]
+   } ],
+   "description": "Automatically load secret panels for web comics",
+   "icons": {
+      "128": "icon128.png",
+      "48": "icon48.png"
+   },
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQD08epgbI0L0WMDk6fdKspHk37jehT36/1JaHFpX6QwHLC+SU2CMc/6c8DDyuZXkC7t0yGoi5w4lxjdaAGbZZaJPCo7xYQjY8O2hoIha5ijl40E0HP1WLyLAIFioCQkZBzFr+rmxF193Y0151sqHyLbTWdJ6Lc4wfuwR8YhsaJOdwIDAQAB",
+   "name": "Comic Helper",
+   "options_page": "options.html",
+   "version": "3.3.1"
+}
